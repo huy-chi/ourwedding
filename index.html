@@ -28,6 +28,8 @@
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
         <link href="css/form-fill.css" rel="stylesheet">
+        <link href="css/qr_code.css" rel="stylesheet">
+
 
     
     </head>
@@ -171,68 +173,93 @@
                 </div>
             </div>
         </div>
-    
-        
-        <!-- <div id="gift-popup" class="popup" onclick="closeGiftPopup(event)">
-            <div class="popup-content" onclick="event.stopPropagation();">
-                <span class="close" onclick="closeGiftPopup()">&times;</span>
-                <div class="gift-container">
-                    <div class="gift-item">
-                        <h3>Mừng cưới chú rể</h3>
-                        <img src="img/QR_chu_re.jpg" alt="Gift 1" id="img1">
-                        <div class="buttons">
-                            <button onclick="downloadImage('img1', 'QR-chu-re.jpg')">📥 Tải QR</button>
-                            <button onclick="copyAccountNumber('0271001052171')">📋 Copy STK</button>
-                        </div>
-                    </div>
-                    <div class="gift-item">
-                        <h3>Mừng cưới cô dâu</h3>
-                        <img src="img/QR_co_dau.jpg" alt="Gift 2" id="img2">
-                        <div class="buttons">
-                            <button onclick="downloadImage('img2', 'Qr_codau.jpg')">📥 Tải QR</button>
-                            <button onclick="copyAccountNumber('0271001051146')">📋 Copy STK</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
 
-        <div class="container-fluid gallery message-form-container position-relative py-5" >
-            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
-                <h1 class="display-2 text-dark">Lời Chúc</h1>
-            </div>
-            <div class="form-container">
-                <div class="form-row">
-                    <div class="form-field">
-                        <input type="text" id="name" placeholder="Họ và Tên">
-                    </div>
-                    <div class="form-field" id="relationship">
-                        <select>
-                            <option value="" disabled selected>Bạn cô dâu</option>
-                            <option value="option1">Bạn chú rể</option>
-                            <option value="option2">Bạn dâu rể</option>
-                        </select>
+        <div class="container-fluid gallery position-relative py-5" id="weddingGallery">
+            <div class="container position-relative py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                    <h1 class="display-2 text-dark">Hộp mừng cưới</h1>
+                    <h5>Cảm ơn tất cả các tình cảm mà mọi người đã dành cho Huy & Chi
+                    </h5>
+                    <div class="gift-icon" id="giftIcon">
+                        🎁
                     </div>
                 </div>
-                
-                <div class="form-field full-width">
-                    <input type="text" id="message" placeholder="Nhập lời chúc của bạn">
-                </div>
-                
-                <div class="form-field full-width">
-                    <select>
-                        <option value="" disabled selected>Nhập lời chúc có sẵn.</option>
-                        <option value="option1">...tràn đầy hạnh phúc và niềm vui.</option>
-                        <option value="option2">...luôn bình an và hạnh phúc.</option>
-                        <option value="option3">...tràn ngập tình yêu và thành công.</option>
-                    </select>
-                </div>
-                
-                <button class="submit-button">Gửi lời chúc cho Dâu Rể</button>
+
             </div>
         </div>
+    
+        <div class="popup-overlay" id="popupOverlay">
+            <div class="popup">
+                <button class="close-btn" id="closeBtn">×</button>
+                
+                <div class="popup-header">
+                    <h2>Hộp mừng cưới</h2>
+                    <p>Vợ chồng xin cảm ơn tất cả tình cảm của mọi người ạ ❤</p>
+                </div>
+                
+                <div class="popup-content">
+                    <div class="qr-section">
+                        <h3>MỪNG CƯỚI ĐẾN CHÚ RỂ</h3>
+                        <div class="qr-code">
+                            <img src="img/QR_chu_re.jpg" id="qr_chu_re" alt="QR Code">
+                        </div>
+                        <div class="button-group">
+                            <button class="action-btn" onclick="downloadQRCode('qr_chu_re', 'img/QR_chu_re.jpg')">📥 Tải QR</button>
+                            <button class="action-btn" onclick="copyAccountNumber('0271001052171')">📋 Copy STK</button>
+                        </div>
+                    </div>
+                    
+                    <div class="qr-section">
+                        <h3>MỪNG CƯỚI ĐẾN CÔ DÂU</h3>
+                        <div class="qr-code">
+                            <img src="img/QR_co_dau.jpg" id="qr_co_dau"alt="QR Code">
+                        </div>
+                        <div class="button-group">
+                            <button class="action-btn" onclick="downloadQRCode('qr_co_dau', 'img/QR_co_dau.jpg')">📥 Tải QR</button>
+                            <button class="action-btn" onclick="copyAccountNumber('6100281026178')">📋 Copy STK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-fluid position-relative py-5" >
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                <h1 class="display-2 text-dark">Lời Chúc</h1>
+                <h5>Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám cưới của chúng tôi!</h5>
+                <form class="form-container" data-wow-delay="0.1s" id="message-form">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <input type="text" id="name" placeholder="Họ và Tên">
+                        </div>
+                        <div class="form-field">
+                            <select id="relationship">
+                                <option value="Bạn cô dâu">Bạn cô dâu</option>
+                                <option value="Bạn chú rể">Bạn chú rể</option>
+                                <option value="Bạn chú rể">Bạn chú rể</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-field full-width">
+                        <textarea type="text" id="message" placeholder="Nhập lời chúc của bạn"></textarea>
+                    </div>
+                    
+                    <div class="form-field full-width" id="select-available-message">
+                        <select>
+                            <option value="">Nhập lời chúc có sẵn.</option>
+                            <option value="option1">...tràn đầy hạnh phúc và niềm vui.</option>
+                            <option value="option2">...luôn bình an và hạnh phúc.</option>
+                            <option value="option3">...tràn ngập tình yêu và thành công.</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-button">Gửi lời chúc cho Dâu Rể</button>
+                </form>
+            </div>
+            
+        </div>
 
-        <div class="container-fluid gallery message-form-container position-relative py-5" >
+        <!-- <div class="container-fluid gallery message-form-container position-relative py-5" >
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
                 <h1 class="display-2 text-dark">Lời Chúc</h1>
             </div>
@@ -247,17 +274,18 @@
               </div>
               <button type="submit">Gửi lời chúc cho dâu rể</button>
             </form>
-        </div>
+        </div> -->
 
         <script>
             document.getElementById("message-form").addEventListener("submit", function(e) {
                 e.preventDefault();
                 const formData = {
                     name: document.getElementById("name").value,
+                    relationship: document.getElementById("relationship").value,
                     message: document.getElementById("message").value
                 };
     
-                fetch("https://script.google.com/macros/s/AKfycbyHy5sBBq9xmPXLpzXB1GjsKGDlJtFTEH93HPmNf4g_Uobuvd28Klrw-hUMnL8gS57U0A/exec", {
+                fetch("https://script.google.com/macros/s/AKfycbxloREzxTwukdcJoWzAE4vEWRa_hd38dfPZDybwPaiPQLj8INahWSf4-K-N11OdEDSLEw/exec", {
                     method: "POST",
                     mode: "no-cors",
                     body: JSON.stringify(formData),
@@ -317,6 +345,7 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/gallery.js"></script>
+    <script src="js/qr_code.js"></script>
     </body>
 
 </html>
