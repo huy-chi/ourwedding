@@ -126,3 +126,55 @@ document.addEventListener('keydown', (e) => {
             changeImage(-1); // Go to previous image
         }
     });
+// // Mở popup
+// function openGiftPopup() {
+//     document.getElementById("gift-popup").style.display = "flex";
+// }
+
+// // Đóng popup khi click bên ngoài hoặc nút X
+// function closeGiftPopup(event) {
+//     const popup = document.getElementById("gift-popup");
+//     if (!event || event.target === popup) {
+//         popup.style.display = "none";
+//     }
+// }
+
+// // Download ảnh
+// function downloadImage(imgId, fileName) {
+//     const img = document.getElementById(imgId);
+//     const link = document.createElement("a");
+//     link.href = img.src;
+//     link.download = fileName;
+//     document.body.appendChild(link);
+//     link.click();
+//     document.body.removeChild(link);
+// }
+
+// // Copy số tài khoản
+// function copyAccountNumber(accountNumber) {
+//     navigator.clipboard.writeText(accountNumber)
+//         .then(() => alert("Đã copy số tài khoản: " + accountNumber))
+//         .catch(err => console.error("Lỗi copy số tài khoản", err));
+// }
+
+document.getElementById('wishForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting the traditional way
+
+    // Validate and process the form data
+    const name = document.getElementById('name').value;
+    const groomBrideName = document.getElementById('groomBrideName').value;
+    const message = document.getElementById('message').value;
+    const additionalMessage = document.getElementById('additionalMessage').value;
+
+    if (name && groomBrideName && message && additionalMessage) {
+        // You can send the data to a server or log it to the console for now
+        console.log("Name:", name);
+        console.log("Groom/Bride Name:", groomBrideName);
+        console.log("Message:", message);
+        console.log("Additional Message:", additionalMessage);
+        alert("Lời chúc đã được gửi thành công!");
+        document.getElementById('wishForm').reset(); // Reset the form
+    } else {
+        alert("Vui lòng điền tất cả các trường!");
+    }
+});
