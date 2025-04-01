@@ -178,7 +178,7 @@
             <div class="container position-relative py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
                     <h1 class="display-2 text-dark">Hộp mừng cưới</h1>
-                    <h5>Cảm ơn tất cả các tình cảm mà mọi người đã dành cho Huy & Chi
+                    <h5 class="thank_text">Cảm ơn tất cả các tình cảm mà mọi người đã dành cho Huy & Chi
                     </h5>
                     <div class="gift-icon" id="giftIcon">
                         🎁
@@ -193,13 +193,13 @@
                 <button class="close-btn" id="closeBtn">×</button>
                 
                 <div class="popup-header">
-                    <h2>Hộp mừng cưới</h2>
+                    <h2>HỘP MỪNG CƯỚI</h2>
                     <p>Vợ chồng xin cảm ơn tất cả tình cảm của mọi người ạ ❤</p>
                 </div>
                 
                 <div class="popup-content">
                     <div class="qr-section">
-                        <h3>MỪNG CƯỚI ĐẾN CHÚ RỂ</h3>
+                        <h3 class="thank_text">MỪNG CƯỚI ĐẾN CHÚ RỂ</h3>
                         <div class="qr-code">
                             <img src="img/QR_chu_re.jpg" id="qr_chu_re" alt="QR Code">
                         </div>
@@ -210,7 +210,7 @@
                     </div>
                     
                     <div class="qr-section">
-                        <h3>MỪNG CƯỚI ĐẾN CÔ DÂU</h3>
+                        <h3 class="thank_text">MỪNG CƯỚI ĐẾN CÔ DÂU</h3>
                         <div class="qr-code">
                             <img src="img/QR_co_dau.jpg" id="qr_co_dau"alt="QR Code">
                         </div>
@@ -226,7 +226,7 @@
         <div class="container-fluid position-relative py-5" >
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
                 <h1 class="display-2 text-dark">Lời Chúc</h1>
-                <h5>Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám cưới của chúng tôi!</h5>
+                <h5 class="congrat_text">Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám cưới của chúng tôi!</h5>
                 <form class="form-container" data-wow-delay="0.1s" id="message-form">
                     <div class="form-row">
                         <div class="form-field">
@@ -236,7 +236,7 @@
                             <select id="relationship">
                                 <option value="Bạn cô dâu">Bạn cô dâu</option>
                                 <option value="Bạn chú rể">Bạn chú rể</option>
-                                <option value="Bạn chú rể">Bạn chú rể</option>
+                                <option value="Bạn chú rể">Bạn dâu rể</option>
                             </select>
                         </div>
                     </div>
@@ -256,46 +256,7 @@
                     <button type="submit" class="submit-button">Gửi lời chúc cho Dâu Rể</button>
                 </form>
             </div>
-            
         </div>
-
-        <!-- <div class="container-fluid gallery message-form-container position-relative py-5" >
-            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
-                <h1 class="display-2 text-dark">Lời Chúc</h1>
-            </div>
-            <form id="message-form">
-              <div class="inputbox">
-                <input type="text" id="name" required="required">
-                <span>Họ và Tên</span>
-              </div>
-              <div class="inputbox">
-                <input type="text" id="message" required="required">
-                <span>Nhập lời chúc của bạn</span>
-              </div>
-              <button type="submit">Gửi lời chúc cho dâu rể</button>
-            </form>
-        </div> -->
-
-        <script>
-            document.getElementById("message-form").addEventListener("submit", function(e) {
-                e.preventDefault();
-                const formData = {
-                    name: document.getElementById("name").value,
-                    relationship: document.getElementById("relationship").value,
-                    message: document.getElementById("message").value
-                };
-    
-                fetch("https://script.google.com/macros/s/AKfycbxloREzxTwukdcJoWzAE4vEWRa_hd38dfPZDybwPaiPQLj8INahWSf4-K-N11OdEDSLEw/exec", {
-                    method: "POST",
-                    mode: "no-cors",
-                    body: JSON.stringify(formData),
-                    headers: { "Content-Type": "application/json" }
-                })
-                .then(response => response.text())
-                .then(data => alert("Cảm ơn bạn đã chúc phúc chúng mình!"))
-                .catch(error => console.error("Error:", error));
-            });
-        </script>
 
         <div class="carousel-item position-relative active" style="height: 80vh; min-height: 300px;">
             <img class="position-absolute w-100 h-100" src="img/anh_bia.jpg" style="object-fit: cover;">
@@ -319,8 +280,8 @@
                         <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
                     </div>
                     <div class="col-md-6 text-center text-md-end text-white">
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** This template is free as long as you keep the below author's credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author's credit link/attribution link/backlink, ***/-->
                         <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
                         Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
                     </div>
@@ -346,6 +307,10 @@
     <script src="js/main.js"></script>
     <script src="js/gallery.js"></script>
     <script src="js/qr_code.js"></script>
+    <script src="js/form-fill.js"></script>
+
+    <!-- Custom Alert -->
+    <div class="custom-alert" id="customAlert"></div>
     </body>
 
 </html>

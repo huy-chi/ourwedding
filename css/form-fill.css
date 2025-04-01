@@ -1,9 +1,11 @@
- .form-container {
+.form-container {
     width: 100%;
     max-width: 600px;
     background-color: #e6d7e6;
     border-radius: 6px;
     padding: 5%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
 }
 
 .form-row {
@@ -30,6 +32,11 @@ input {
     background: transparent;
     margin-left: 10px;
     border-radius: 6px;
+    font-family: Arial, sans-serif;
+}
+
+.congrat_text {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 textarea {
@@ -42,13 +49,15 @@ textarea {
     background: transparent;
     margin-left: 10px;
     border-radius: 6px;
+    font-family: Arial, sans-serif;
 }
 
 select {
     width: 100%;
     height: 40px;
     border: none;
-    outline: none;    margin-left: 10px;
+    outline: none;    
+    margin-left: 10px;
     font-size: 16px;
     background: transparent;
     appearance: none;
@@ -57,10 +66,12 @@ select {
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black' width='18px' height='18px'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: calc(100% - 20px) center; /* Adjusted background position */
+    font-family: Arial, sans-serif;
 }
 
 .submit-button {
     background-color: #a18ba1;
+    padding: 10px;
     color: white;
     border: none;
     font-size: 18px;
@@ -71,8 +82,53 @@ select {
     display: block;
     margin: 30px auto;
     text-align: center;
+    font-family: Arial, sans-serif;
 }
 
 .submit-button:hover {
     background-color: #8a788a;
+}
+
+/* Custom Alert Styles */
+.custom-alert {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e6d7e6;
+    color: #333;
+    padding: 15px 30px;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    animation: slideDown 0.5s ease-out;
+    border: 2px solid #a18ba1;
+}
+
+.custom-alert.success {
+    background-color: #e6d7e6;
+    border-color: #a18ba1;
+}
+
+.custom-alert.error {
+    background-color: #ffe6e6;
+    border-color: #ff9999;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+.custom-alert.show {
+    display: block;
 }
