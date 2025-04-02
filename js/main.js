@@ -130,4 +130,30 @@
         });
     });
 
+    // Music Player Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const musicPlayerToggle = document.getElementById('musicPlayerToggle');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        
+        if (musicPlayerToggle && backgroundMusic) {
+            musicPlayerToggle.addEventListener('click', function() {
+                if (backgroundMusic.paused) {
+                    backgroundMusic.play();
+                    musicPlayerToggle.classList.add('active');
+                } else {
+                    backgroundMusic.pause();
+                    musicPlayerToggle.classList.remove('active');
+                }
+            });
+            
+            // Pause music when page is not visible
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden) {
+                    backgroundMusic.pause();
+                    musicPlayerToggle.classList.remove('active');
+                }
+            });
+        }
+    });
+
 })(jQuery);
