@@ -10,7 +10,7 @@
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"> 
 
         <!-- Icon Font Stylesheet -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
@@ -30,11 +30,41 @@
         <link href="css/form-fill.css" rel="stylesheet">
         <link href="css/qr_code.css" rel="stylesheet">
 
+        <link rel="icon" href="img/HMP01131.jpg" type="image/x-icon">
 
     
     </head>
 
     <body data-bs-spy="scroll" data-bs-target="#navBar" id="weddingHome">
+        <!-- Navigation Menu -->
+        <div class="nav-menu-container">
+            <button class="nav-menu-toggle" id="navMenuToggle">
+                <i class="fas fa-bars" id="menuIcon"></i>
+                <i class="fas fa-times" id="closeIcon"></i>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="#weddingAbout" class="nav-menu-item">
+                    <i class="fas fa-heart"></i>
+                    <span class="menu-text">Lời ngỏ</span>
+                </a>
+                <a href="#weddingCalendar" class="nav-menu-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="menu-text">Sự kiện cưới</span>
+                </a>
+                <a href="#weddingGallery" class="nav-menu-item">
+                    <i class="fas fa-images"></i>
+                    <span class="menu-text">Pre-Wedding Gallery</span>
+                </a>
+                <a href="#weddingGift" class="nav-menu-item">
+                    <i class="fas fa-gift"></i>
+                    <span class="menu-text">Hộp mừng cưới</span>
+                </a>
+                <a href="#weddingWishes" class="nav-menu-item">
+                    <i class="fas fa-comment-dots"></i>
+                    <span class="menu-text">Lời Chúc</span>
+                </a>
+            </div>
+        </div>
 
         <!-- Spinner Start -->
         <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
@@ -53,36 +83,21 @@
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
                         <img src="img/HMP01009.jpg" class="img-fluid" alt="Image">
-                        <div class="carousel-caption">
-                            <div class="p-3 mx-auto animated zoomIn" style="max-width: 900px;">
-                                <h1 class="display-1 text-capitalize text-white mb-3">Huy <i class="fa fa-heart text-primary"></i> Chi</h1>
-                                <div class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-5" style="border-style: double;">
-                                    <h4 class="text-white text-uppercase fw-bold mb-0" style="letter-spacing: 3px;">01-05-2024</h4>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="carousel-item">
                         <img src="img/HMP00645.jpg" class="img-fluid" alt="Image">
-                        <div class="carousel-caption">
-                            <div class="p-3 mx-auto animated zoomIn" style="max-width: 900px;">
-                                <h1 class="display-1 text-capitalize text-white mb-3">Huy <i class="fa fa-heart text-primary"></i> Chi</h1>
-                                <div class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-4" style="border-style: double;">
-                                    <h4 class="text-white text-uppercase fw-bold mb-0" style="letter-spacing: 3px;">01-05-2024</h4>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="carousel-item">
                         <img src="img/HMP01429.jpg" class="img-fluid bg-secondary" alt="Image">
-                        <div class="carousel-caption">
-                            <div class="p-3 mx-auto animated zoomIn" style="max-width: 900px;">
-                                <h1 class="display-1 text-capitalize text-white mb-3">Huy <i class="fa fa-heart text-primary"></i> Chi</h1>
-                                <div class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-4" style="border-style: double;">
-                                    <h4 class="text-white text-uppercase fw-bold mb-0" style="letter-spacing: 3px;">01-05-2024</h4>
-                                </div>
-
-                            </div>
+                    </div>
+                </div>
+                
+                <!-- Single caption for all slides -->
+                <div class="carousel-caption">
+                    <div class="p-3 mx-auto animated zoomIn" style="max-width: 900px;">
+                        <h1 class="display-1 text-capitalize text-white mb-3">Huy <i class="fa fa-heart text-primary"></i> Chi</h1>
+                        <div class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-5" style="border-style: double;">
+                            <h4 class="text-white text-uppercase fw-bold mb-0" style="letter-spacing: 3px;">01-05-2024</h4>
                         </div>
                     </div>
                 </div>
@@ -100,6 +115,12 @@
 
         <div class="container-fluid position-relative py-5" id="weddingAbout">
             <div class="container position-relative py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                    <h1 class="display-2 text-dark">Lời ngỏ</h1>
+                    <h5>Cảm ơn bạn đã dành tình cảm cho vợ chồng mình. Chúng mình biết các bạn đều đang rất bận, bận với công việc, với cuộc sống và với cả gia đình bạn.
+                        Nhưng thực sự sẽ rất tuyệt vời nếu như ngày Hạnh Phúc của chúng mình có thêm sự góp mặt của bạn và người thương. Vợ chồng mình rất hi vọng sẽ có mặt bạn trong ngày quan trọng này để chứng kiến và chia sẻ niềm hạnh phúc này cùng chúng mình.
+                        Một lần nữa, chân thành cảm ơn tất cả các bạn ❤️</h5>
+                </div>
                 <div class="row">
                     <div class="col-lg-4 d-flex justify-content-center align-items-center wow fadeInUp" data-wow-delay="0.3s">
                         <div class="d-flex justify-content-center">
@@ -169,12 +190,10 @@
                 </div>
                 <div class="row g-4" id="gallery-images">
                 </div>
-                <div class="pagination text-center mt-4" id="pagination">
-                </div>
             </div>
         </div>
 
-        <div class="container-fluid gallery position-relative py-5" id="weddingGallery">
+        <div class="container-fluid gallery position-relative py-5" id="weddingGift">
             <div class="container position-relative py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
                     <h1 class="display-2 text-dark">Hộp mừng cưới</h1>
@@ -223,7 +242,7 @@
             </div>
         </div>
         
-        <div class="container-fluid position-relative py-5" >
+        <div class="container-fluid position-relative py-5" id="weddingWishes">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
                 <h1 class="display-2 text-dark">Lời Chúc</h1>
                 <h5 class="congrat_text">Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám cưới của chúng tôi!</h5>
@@ -258,16 +277,15 @@
             </div>
         </div>
 
-        <div class="carousel-item position-relative active" style="height: 80vh; min-height: 300px;">
-            <img class="position-absolute w-100 h-100" src="img/anh_bia.jpg" style="object-fit: cover;">
-            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                <div class="p-3" style="max-width: 900px;">
-                    <div class="d-inline-block border-top border-bottom border-light py-3 px-4">
-                        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
-                            <h1 class="display-1 text-dark text-white">Thank you!</h1>
-                            <h3 class="display-3 text-dark text-white">-Huy & Chi-</h3>
-                        </div>
-                    </div>
+        <!-- Thank You Section -->
+        <div class="thank-you-section">
+            <div class="thank-you-image">
+                <img src="img/anh_bia.jpg" alt="Thank You Background">
+            </div>
+            <div class="thank-you-content">
+                <div class="thank-you-text">
+                    <h1>Thank you!</h1>
+                    <h3>-Huy & Chi-</h3>
                 </div>
             </div>
         </div>

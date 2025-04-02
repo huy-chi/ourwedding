@@ -6,21 +6,22 @@ const downloadQR1 = document.getElementById('downloadQR1');
 const downloadQR2 = document.getElementById('downloadQR2');
 const copySoTaiKhoan1 = document.getElementById('copySoTaiKhoan1');
 const copySoTaiKhoan2 = document.getElementById('copySoTaiKhoan2');
+const customAlert = document.getElementById('customAlert');
 
 // Open popup when gift icon is clicked
 giftIcon.addEventListener('click', () => {
-    popupOverlay.style.display = 'flex';
+    popupOverlay.classList.add('show');
 });
 
 // Close popup when close button is clicked
 closeBtn.addEventListener('click', () => {
-    popupOverlay.style.display = 'none';
+    popupOverlay.classList.remove('show');
 });
 
 // Close popup when clicking outside the popup
 popupOverlay.addEventListener('click', (event) => {
     if (event.target === popupOverlay) {
-        popupOverlay.style.display = 'none';
+        popupOverlay.classList.remove('show');
     }
 });
 
@@ -34,8 +35,17 @@ function downloadQRCode(imgId, fileName) {
     document.body.removeChild(link);
 }
 
+function showCustomAlert(message) {
+    customAlert.textContent = message;
+    customAlert.classList.add('show');
+    
+    setTimeout(() => {
+        customAlert.classList.remove('show');
+    }, 3000);
+}
+
 function copyAccountNumber(accountNumber) {
     navigator.clipboard.writeText(accountNumber)
-        .then(() => alert("Đã copy số tài khoản: " + accountNumber))
-        .catch(err => console.error("Lỗi copy số tài khoản", err));
+        .then(() => showCustomAlert("Đã copy stk: " + accountNumber + "❤️"))
+        .catch(err => console.error("Lỗi copy stk", err));
 }

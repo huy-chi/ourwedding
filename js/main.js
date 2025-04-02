@@ -56,4 +56,78 @@
         return false;
     }); 
 
+    // Navigation Menu Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const navMenuToggle = document.getElementById('navMenuToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navMenuItems = document.querySelectorAll('.nav-menu-item');
+        const menuIcon = document.getElementById('menuIcon');
+        const closeIcon = document.getElementById('closeIcon');
+
+        // Toggle menu
+        navMenuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('show');
+            navMenuToggle.classList.toggle('active');
+            
+            // Adjust menu position based on viewport height
+            if (navMenu.classList.contains('show')) {
+                const menuHeight = navMenu.offsetHeight;
+                const viewportHeight = window.innerHeight;
+                const menuBottom = navMenu.getBoundingClientRect().bottom;
+                
+                // If menu would extend beyond viewport, position it above the toggle button
+                if (menuBottom > viewportHeight) {
+                    navMenu.style.bottom = 'auto';
+                    navMenu.style.top = `-${menuHeight + 10}px`;
+                } else {
+                    navMenu.style.bottom = '0';
+                    navMenu.style.top = 'auto';
+                }
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!navMenu.contains(event.target) && !navMenuToggle.contains(event.target)) {
+                navMenu.classList.remove('show');
+                navMenuToggle.classList.remove('active');
+            }
+        });
+
+        // Smooth scroll to sections
+        navMenuItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    navMenu.classList.remove('show');
+                    navMenuToggle.classList.remove('active');
+                }
+            });
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (navMenu.classList.contains('show')) {
+                const menuHeight = navMenu.offsetHeight;
+                const viewportHeight = window.innerHeight;
+                const menuBottom = navMenu.getBoundingClientRect().bottom;
+                
+                if (menuBottom > viewportHeight) {
+                    navMenu.style.bottom = 'auto';
+                    navMenu.style.top = `-${menuHeight + 10}px`;
+                } else {
+                    navMenu.style.bottom = '0';
+                    navMenu.style.top = 'auto';
+                }
+            }
+        });
+    });
+
 })(jQuery);
