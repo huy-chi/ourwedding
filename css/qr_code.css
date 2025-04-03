@@ -1,4 +1,4 @@
-.gift-icon {
+/* .gift-icon {
     font-size: 3em;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -8,7 +8,7 @@
 
 .gift-icon:hover {
     transform: scale(1.1);
-}
+} */
 
 .thank_text {
     font-weight: 500;
@@ -42,7 +42,7 @@
     border-radius: 10px;
     padding: 20px;
     max-width: 90%;
-    width: 800px;
+    width: 600px;
     position: relative;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     font-family: 'Roboto', sans-serif;
@@ -122,8 +122,8 @@
 }
 
 .qr-code img {
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 180px;
+    max-height: 180px;
     width: auto;
     height: auto;
     object-fit: contain;
