@@ -133,9 +133,9 @@
 
 .button-group {
     display: flex;
+    gap: 10px;
     justify-content: center;
-    gap: 8px;
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 .action-btn {
@@ -148,6 +148,8 @@
     transition: background-color 0.3s;
     font-family: 'Roboto', sans-serif;
     font-size: 0.9rem;
+    flex: 1;
+    min-width: 100px;
 }
 
 .action-btn:hover {
@@ -166,11 +168,16 @@
     }
     
     .button-group {
-        flex-direction: column;
+        gap: 8px;
     }
     
     .action-btn {
-        width: 100%;
+        font-size: 0.85rem;
+        padding: 8px 10px;
+    }
+
+    .qr-section {
+        padding: 15px;
     }
 }
 
