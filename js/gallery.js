@@ -22,19 +22,9 @@ function createGalleryItem(imagePath) {
     img.src = imagePath;
     img.className = 'img-fluid';
     img.alt = 'Gallery Image';
-    img.style.cursor = 'pointer';
     
     galleryItem.appendChild(img);
     col.appendChild(galleryItem);
-    
-    // Add click event to open modal
-    img.addEventListener('click', () => {
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImage');
-        modalImg.src = imagePath;
-        const bsModal = new bootstrap.Modal(modal);
-        bsModal.show();
-    });
     
     return col;
 }
