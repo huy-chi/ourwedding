@@ -47,7 +47,8 @@ document.getElementById('message-form').addEventListener('submit', function(e) {
 // Handle preset message selection
 document.getElementById('select-available-message').addEventListener('change', function(e) {
     const messageTextarea = document.getElementById('message');
-    if (e.target.value) {
-        messageTextarea.value = e.target.value;
+    const selectedOption = e.target.options[e.target.selectedIndex];
+    if (selectedOption.value) {
+        messageTextarea.value = selectedOption.text;
     }
 });
